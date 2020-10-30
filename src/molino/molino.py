@@ -6,10 +6,7 @@ except KeyError:
     print("please set environment variable `MOLINO_DIR`. See README.md for details") 
 
 
-cosmo_list = []
-
-
-def GalaxyCatalog(cosmo, i_nbody=1, i_hod=1, apply_rsd=False, columns=['x', 'y', 'z']): 
+def GalaxyCatalog(cosmo, i_nbody=1, i_hod=1, z=0, apply_rsd=False, columns=['x', 'y', 'z']): 
     ''' Read a galaxy catalog(s) from the Molino suite
 
     Parameters
@@ -28,6 +25,9 @@ def GalaxyCatalog(cosmo, i_nbody=1, i_hod=1, apply_rsd=False, columns=['x', 'y',
         The number of HOD realization. For some of the cosmologies, the mocks
         are generated using multiple HOD realizations. This specifies which HOD
         realization(s) to read. (Default: 1) 
+
+    z : float
+        redshift
 
     apply_rsd : bool or string
         If False, don't apply redshift-space distortions. Otherwise, specify
@@ -53,6 +53,10 @@ def GalaxyCatalog(cosmo, i_nbody=1, i_hod=1, apply_rsd=False, columns=['x', 'y',
     catalogs : array_like 
     '''
     # parse inputs 
+    cosmo_list = ['Om_p', 'Ob2_p', 'h_p', 'ns_p', 's8_p', 'Om_m',  'Ob2_m',
+            'h_m', 'ns_m', 's8_m', 'Mnu_p', 'Mnu_pp', 'Mnu_ppp', 'logMmin_m',
+            'logMmin_p', 'sigma_logM_m', 'sigma_logM_p', 'logM0_m', 'logM0_p',
+            'alpha_m', 'alpha_p', 'logM1_m', 'logM1_p', 'fiducial_ZA', 'fiducial']
     if cosmo is not in cosmo_list: 
         msg = '\n'.join([
             'please choose among one of the following cosmologies:', 
@@ -70,9 +74,11 @@ def GalaxyCatalog(cosmo, i_nbody=1, i_hod=1, apply_rsd=False, columns=['x', 'y',
     except TypeError: 
         i_hod = [int(_i) for _i in i_hod]
 
+    if z not in [0.]: 
+        raise ValueError('z=%f is not yet supported' % z) 
+
     if apply_rsd: 
         assert apply_rsd in ['x', 'y', 'z'], "Which direction do you want to apply the RSD?"
-    
     
     catalogs = [] 
     # loop through n-body realizations 
@@ -82,11 +88,8 @@ def GalaxyCatalog(cosmo, i_nbody=1, i_hod=1, apply_rsd=False, columns=['x', 'y',
         for ihod in i_hod: 
             # read catalog at `cosmo` cosmology with `_i_nbody`th n-body
             # realization and `_i_hod` HOD realization. 
-            catalog = _read_catalog(cosmo, inbody, ihod, colums)
+            catalog = _read_catalog(cosmo, inbody, ihod, z, colums, apply_rsd)
             catalogs.append(catalog)
-
-
-
 
     if len(catalogs) == 1: 
         return catalogs[0] 
@@ -94,15 +97,16 @@ def GalaxyCatalog(cosmo, i_nbody=1, i_hod=1, apply_rsd=False, columns=['x', 'y',
         return catalogs 
 
 
-
-def _read_catalog(cosmo, i_nbody, i_hod, columns): 
+def _read_catalog(cosmo, i_nbody, i_hod, z, columns, apply_rsd): 
     ''' read a single galaxy catalog 
     '''
-    
+    z_str = {'0.0': '0', '0.5': '0.5', '1.0': '1'}['%.1f' % z]
+
+    fgal = os.path.join(os.environ['MOLINO_DIR'], 'z=%s' % z_str, 
+            'molino.z%.1f.%s.nbody%i.hod%i.hdf5' % (z, cosmo, i_nbody, i_hod)
     gals = h5py.File(fgal, 'r') 
 
-    if ('x' in columns) or ('y' in columns) or ('z' in columns): 
-        xyz = gals['pos'][...]
+    xyz = gals['pos'][...]
     
     if ('vx' in columns) or ('vy' in columns) or ('vz' in columns): 
         vxyz = gals['vel'][...]
@@ -112,6 +116,20 @@ def _read_catalog(cosmo, i_nbody, i_hod, columns):
 
     if ('vx_halo' in columns) or ('vy_halo' in columns) or ('vz_halo' in columns): 
         vxyz_h = gals['halo_vel'][...]
+
+    # apply redshift-space distoritons 
+    if apply_rsd:
+        vel_offset = gals['vel_offset'][...] # velocity offsets
+
+        # line-of-sight
+        LOS = {'x': [1, 0, 0], 'y': [0, 1, 0], 'z': [0, 0, 1]}[apply_rsd] 
+        i_rsd = np.arange(3)[np.array(LOS).astype(bool)][0]
+
+        xyz += velocity * LOS
+        # impose periodic boundary conditions for particles outside the box 
+        _rsd = xyz[:,i_rsd] % Lbox
+        xyz[:,i_rsd] = np.array(_rsd)
+
     
     cat = [] 
     for col in columns:
@@ -132,9 +150,3 @@ def _read_catalog(cosmo, i_nbody, i_hod, columns):
         if col == 'r_halo': cat.append(gals['r_halo'][...]) 
     
     return np.array(cat) 
-
-
-
-def cosmo_lookup(cosmo): 
-    '''
-    '''
