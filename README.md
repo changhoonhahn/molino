@@ -46,23 +46,19 @@ folder structure
     - Mnu_pp/
     - Mnu_ppp/
     - fiducial_ZA/ 
-    - fiducial_logMmin=13.70/
-    - fiducial_logMmin=13.60/
-    - fiducial_sigma_logM=0.22/
-    - fiducial_sigma_logM=0.18/
-    - fiducial_logM0=14.2/
-    - fiducial_logM0=13.8/
-    - fiducial_alpha=1.3/
-    - fiducial_alpha=0.9/
-    - fiducial_logM1=14.2/
-    - fiducial_logM1=13.8/
-    - fiducial_HR_sigma_logM=0.57/
-    - fiducial_HR_sigma_logM=0.53/
+    - logMmin_p/
+    - logMmin_m/
+    - sigma_logM_p/
+    - sigma_logM_m/
+    - logM0_p/
+    - logM0_m/
+    - alpha_p/
+    - alpha_m/
+    - logM1_p/
+    - logM1_m/
+
 
 /z=0/fiducial/ contains 15,000 galaxy mock catalogs
-
-/z=0/fiducial_HR_sigma_logM=0.57/ and /z=0/fiducial_HR_sigma_logM=0.53/ contain
-500 galaxy mock catalogs
 
 the rest /z=0/../ contain 2,500 galaxy mock catalogs  
 
