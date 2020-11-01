@@ -63,7 +63,7 @@ cd "\DIRECTORY_WHERE_YOU_CLONED_THE_MOLINO_REPO\"
 sh bin/uncompress.sh
 ```
 
-Uncompressing the data can take a significant amount of time so plan accordingly. 
+Uncompressing the data can take a couple of minutes so plan accordingly. 
 
 ***You're all set!*** Check out some examples to see how you can use `molino`  to easily: *e.g.* [read in the galaxy mocks](), calculate the [redshift-space galaxy power spectrum](), or calculate the [redshift-space galaxy bispectrum](). 
 
