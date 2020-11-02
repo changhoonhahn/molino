@@ -52,6 +52,10 @@ def GalaxyCatalog(cosmo, i_nbody=1, i_hod=1, z=0, apply_rsd=False, columns=['x',
     Returns 
     -------
     catalogs : array_like 
+        If i_nbody and i_hod are both ints, a single catalog is returned.
+        Otherwise, if i_nbody or i_hod is an array_list, a list of catalogs is
+        results. The catalogs are ordered with the i_nbody as the outside loop:
+        i.e. for i in i_nbody: for j in i_hod: (i,j). 
     '''
     # parse inputs 
     cosmo_list = ['Om_p', 'Ob2_p', 'h_p', 'ns_p', 's8_p', 'Om_m',  'Ob2_m',
