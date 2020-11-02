@@ -69,7 +69,7 @@ Uncompressing the data can take a couple of minutes so plan accordingly.
 
 ## Halo Occupation Distribution
 
-We use the Halo Occupation Distribution (HOD) framework to construct the Molino galaxy mocks. HODs statistically populate galaxies in dark matter halos by specifying the probability of a given halo hosting N galaxies  based on its halo mass --- P(N|M_h). We use the standard Zheng _et al._ (2007) HOD model. 
+We use the Halo Occupation Distribution (HOD) framework to construct the Molino galaxy mocks. HODs statistically populate galaxies in dark matter halos by specifying the probability of a given halo hosting N galaxies based on its halo mass. We use the standard Zheng _et al._ (2007) HOD model. 
 
 For the fiducial HOD parameters, we use the following values
 
