@@ -1,4 +1,5 @@
 import os, h5py 
+import numpy as np 
 
 try: 
     os.environ['MOLINO_DIR']
@@ -57,7 +58,7 @@ def GalaxyCatalog(cosmo, i_nbody=1, i_hod=1, z=0, apply_rsd=False, columns=['x',
             'h_m', 'ns_m', 's8_m', 'Mnu_p', 'Mnu_pp', 'Mnu_ppp', 'logMmin_m',
             'logMmin_p', 'sigma_logM_m', 'sigma_logM_p', 'logM0_m', 'logM0_p',
             'alpha_m', 'alpha_p', 'logM1_m', 'logM1_p', 'fiducial_ZA', 'fiducial']
-    if cosmo is not in cosmo_list: 
+    if cosmo not in cosmo_list: 
         msg = '\n'.join([
             'please choose among one of the following cosmologies:', 
             ', '.join(cosmo_list)
@@ -88,13 +89,13 @@ def GalaxyCatalog(cosmo, i_nbody=1, i_hod=1, z=0, apply_rsd=False, columns=['x',
         for ihod in i_hod: 
             # read catalog at `cosmo` cosmology with `_i_nbody`th n-body
             # realization and `_i_hod` HOD realization. 
-            catalog = _read_catalog(cosmo, inbody, ihod, z, colums, apply_rsd)
+            catalog = _read_catalog(cosmo, inbody, ihod, z, columns, apply_rsd)
             catalogs.append(catalog)
 
     if len(catalogs) == 1: 
         return catalogs[0] 
     else: 
-        return catalogs 
+        return catalogs
 
 
 def _read_catalog(cosmo, i_nbody, i_hod, z, columns, apply_rsd): 
@@ -102,8 +103,8 @@ def _read_catalog(cosmo, i_nbody, i_hod, z, columns, apply_rsd):
     '''
     z_str = {'0.0': '0', '0.5': '0.5', '1.0': '1'}['%.1f' % z]
 
-    fgal = os.path.join(os.environ['MOLINO_DIR'], 'z=%s' % z_str, 
-            'molino.z%.1f.%s.nbody%i.hod%i.hdf5' % (z, cosmo, i_nbody, i_hod)
+    fgal = os.path.join(os.environ['MOLINO_DIR'], 'z=%s' % z_str, cosmo, 
+            'molino.z%.1f.%s.nbody%i.hod%i.hdf5' % (z, cosmo, i_nbody, i_hod))
     gals = h5py.File(fgal, 'r') 
 
     xyz = gals['pos'][...]
@@ -125,9 +126,9 @@ def _read_catalog(cosmo, i_nbody, i_hod, z, columns, apply_rsd):
         LOS = {'x': [1, 0, 0], 'y': [0, 1, 0], 'z': [0, 0, 1]}[apply_rsd] 
         i_rsd = np.arange(3)[np.array(LOS).astype(bool)][0]
 
-        xyz += velocity * LOS
+        xyz += vel_offset * LOS
         # impose periodic boundary conditions for particles outside the box 
-        _rsd = xyz[:,i_rsd] % Lbox
+        _rsd = xyz[:,i_rsd] % 1000.  
         xyz[:,i_rsd] = np.array(_rsd)
 
     
@@ -149,4 +150,4 @@ def _read_catalog(cosmo, i_nbody, i_hod, z, columns, apply_rsd):
         if col == 'm_halo': cat.append(gals['m_halo'][...]) 
         if col == 'r_halo': cat.append(gals['r_halo'][...]) 
     
-    return np.array(cat) 
+    return np.array(cat).T
