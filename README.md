@@ -94,4 +94,4 @@ These values are based on the best-fit HOD parameters for the SDSS high luminosi
 
 ## Contact
 
-If you have any questions or need help using the data, contact me at changhoon.hahn@princeton.edu. 
+If you have any questions or need help using the data, feel free to contact me at changhoon.hahn@princeton.edu 

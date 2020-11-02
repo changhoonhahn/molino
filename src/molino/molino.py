@@ -151,7 +151,7 @@ def _read_catalog(cosmo, i_nbody, i_hod, z, columns, apply_rsd):
         if col == 'vy_halo': cat.append(vxyz_h[:,1])
         if col == 'vz_halo': cat.append(vxyz_h[:,2])
         if col == 'gal_type': cat.append(gals['gal_type'][...])
-        if col == 'm_halo': cat.append(gals['m_halo'][...]) 
-        if col == 'r_halo': cat.append(gals['r_halo'][...]) 
+        if col == 'm_halo': cat.append(gals['halo_mvir'][...]) 
+        if col == 'r_halo': cat.append(gals['halo_rvir'][...]) 
     
     return np.array(cat).T
