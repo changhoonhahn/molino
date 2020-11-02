@@ -1,4 +1,4 @@
-# The Molino Suite of Galaxy Mock Catalogs
+# The Molino Suite of Mock Galaxy Catalogs
 Molino contains 75,000 galaxy mock catalogs designed to quantify the information content of any cosmological observable for a redshift-space galaxy sample. The galaxy catalogs are constructed from the Quijote N-body simulations ([Villaescusa-Navarro _et al._ 2020](https://ui.adsabs.harvard.edu/abs/2020ApJS..250....2V/abstract)) using the standard [Zheng *et al.* (2007)](https://ui.adsabs.harvard.edu/abs/2007ApJ...667..760Z/abstract) Halo Occupation Distribution (HOD) model. 
 
 The [fiducial HOD parameters](#halo-occupation-distribution) are based on the SDSS high luminosity samples. The suite includes: 
