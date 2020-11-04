@@ -34,6 +34,21 @@
             
   <div class="section" id="the-molino-suite-of-mock-galaxy-catalogs">
 <h1>The Molino Suite of Mock Galaxy Catalogs<a class="headerlink" href="#the-molino-suite-of-mock-galaxy-catalogs" title="Permalink to this headline">¶</a></h1>
+<p>Molino contains 75,000 galaxy mock catalogs designed to quantify the information content of any cosmological observable for a redshift-space galaxy sample. The galaxy catalogs are constructed from the Quijote N-body simulations ([Villaescusa-Navarro _et al._ 2020](<a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2020ApJS..250....2V/abstract">https://ui.adsabs.harvard.edu/abs/2020ApJS..250….2V/abstract</a>)) using the standard [Zheng <em>et al.</em> (2007)](<a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2007ApJ...667..760Z/abstract">https://ui.adsabs.harvard.edu/abs/2007ApJ…667..760Z/abstract</a>) Halo Occupation Distribution (HOD) model.</p>
+<p>The fiducial HOD parameters are based on the SDSS high luminosity samples. The suite includes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">15,000</span> <span class="pre">mocks</span></code> at the fiducial cosmological and HOD parameters for covariance
+matrix estimation</p></li>
+<li><p>(500 N-body realizations) x (5 HOD realizations) = <code class="docutils literal notranslate"><span class="pre">2,500</span> <span class="pre">mocks</span></code> at 24 other
+parameter values to estimate the derivative of the observable with respect to
+six cosmological parameters (<code class="docutils literal notranslate"><span class="pre">Omega_m</span></code>, <code class="docutils literal notranslate"><span class="pre">Omega_b</span></code>, <code class="docutils literal notranslate"><span class="pre">h</span></code>, <code class="docutils literal notranslate"><span class="pre">n_s</span></code>, <code class="docutils literal notranslate"><span class="pre">sigma_8</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">M_nu</span></code>) and five HOD parameters (<code class="docutils literal notranslate"><span class="pre">logMmin</span></code>, <code class="docutils literal notranslate"><span class="pre">sigma_logM</span></code>, <code class="docutils literal notranslate"><span class="pre">logM0</span></code>,
+<code class="docutils literal notranslate"><span class="pre">alpha</span></code>, and <code class="docutils literal notranslate"><span class="pre">logM1</span></code>).</p></li>
+</ul>
+<p>Using the covariance matrix and derivatives calculated from Molino,
+you can derive Fisher matrix forecasts on the cosmological parameters
+marginalized over HOD parameters. The <code class="docutils literal notranslate"><span class="pre">molino</span></code> python package
+provides an easy way to access the galaxy mock catalogs.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install/">Installation</a><ul>
