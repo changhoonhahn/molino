@@ -11,11 +11,3 @@ Welcome to molino's documentation!
 
    install
    hod 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
