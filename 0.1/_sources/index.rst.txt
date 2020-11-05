@@ -21,11 +21,10 @@ The fiducial HOD parameters are based on the SDSS high luminosity samples. The s
 
 *   ``15,000 mocks`` at the fiducial cosmological and HOD parameters for covariance 
     matrix estimation
-*   (500 N-body realizations) x (5 HOD realizations) = ``2,500 mocks`` at 24 other 
-    parameter values to estimate the derivative of the observable with respect to 
-    six cosmological parameters (``Omega_m``, ``Omega_b``, ``h``, ``n_s``, ``sigma_8``, 
-    and ``M_nu``) and five HOD parameters (``logMmin``, ``sigma_logM``, ``logM0``, 
-    ``alpha``, and ``logM1``). 
+*   ``60,000 mocks`` = (500 N-body realizations) x (5 HOD realizations) x (24 other parameter values) 
+    to estimate the derivative of the observable with respect to six cosmological parameters 
+    (``Omega_m``, ``Omega_b``, ``h``, ``n_s``, ``sigma_8``, and ``M_nu``) and five HOD parameters 
+    (``logMmin``, ``sigma_logM``, ``logM0``, ``alpha``, and ``logM1``). 
 
 Using the covariance matrix and derivatives calculated from Molino, 
 you can derive Fisher matrix forecasts on the cosmological parameters 
