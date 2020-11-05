@@ -9,15 +9,14 @@ Molino contains 75,000 galaxy mock catalogs designed to quantify
 the information content of any cosmological observable for a 
 redshift-space galaxy sample. The galaxy catalogs are constructed 
 from the Quijote N-body simulations (|text1|_) using the standard 
-|zheng|_ Halo Occupation Distribution (HOD) model. 
+|zheng|_ Halo Occupation Distribution (HOD) model. The suite 
+contains:
 
 .. _text1: https://ui.adsabs.harvard.edu/abs/2020ApJS..250....2V/abstract/
 .. |text1| replace:: Villaescusa-Navarro *et al.* 2020
 
 .. _zheng: https://ui.adsabs.harvard.edu/abs/2007ApJ...667..760Z/abstract/
 .. |zheng| replace:: Zheng *et al.* (2007)
-
-The fiducial HOD parameters are based on the SDSS high luminosity samples. The suite includes: 
 
 *   ``15,000 mocks`` at the fiducial cosmological and HOD parameters for covariance 
     matrix estimation
@@ -26,6 +25,8 @@ The fiducial HOD parameters are based on the SDSS high luminosity samples. The s
     (``Omega_m``, ``Omega_b``, ``h``, ``n_s``, ``sigma_8``, and ``M_nu``) and five HOD parameters 
     (``logMmin``, ``sigma_logM``, ``logM0``, ``alpha``, and ``logM1``). 
 
+
+The fiducial HOD parameters are based on the SDSS high luminosity samples.
 Using the covariance matrix and derivatives calculated from Molino, 
 you can derive Fisher matrix forecasts on the cosmological parameters 
 marginalized over HOD parameters. The ``molino`` python package 
