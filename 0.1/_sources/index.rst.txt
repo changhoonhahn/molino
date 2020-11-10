@@ -10,7 +10,8 @@ the information content of any cosmological observable for a
 redshift-space galaxy sample. The galaxy catalogs are constructed 
 from the Quijote N-body simulations (|text1|_) using the standard 
 |zheng|_ Halo Occupation Distribution (HOD) model. The suite 
-contains:
+contains the galaxy catalogs necessary to conduct a Fisher matrix
+forecast over a full set of cosmological and HOD parameters:i
 
 .. _text1: https://ui.adsabs.harvard.edu/abs/2020ApJS..250....2V/abstract/
 .. |text1| replace:: Villaescusa-Navarro *et al.* 2020
@@ -29,8 +30,15 @@ contains:
 The fiducial HOD parameters are based on the SDSS high luminosity samples.
 Using the covariance matrix and derivatives calculated from Molino, 
 you can derive Fisher matrix forecasts on the cosmological parameters 
-marginalized over HOD parameters. The ``molino`` python package 
-provides an easy way to access the galaxy mock catalogs.  
+marginalized over HOD parameters. 
+
+
+The |molino|_ python package provides an easy way to access the galaxy mock
+catalogs and compute cosmological observables. 
+
+
+.. _molino: https://github.com/changhoonhahn/molino/
+.. |molino| replace:: ``molino``
 
 
 .. toctree::
