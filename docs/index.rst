@@ -22,7 +22,7 @@ any cosmological observable for a redshift-space galaxy sample:
 
 *   ``15,000 mocks`` at the fiducial cosmological and HOD parameters for covariance 
     matrix estimation
-*   ``60,000 mocks``  24 other parameter values (2,500 mocks each) to estimate the 
+*   ``60,000 mocks`` at 24 other parameter values (2,500 mocks each) to estimate the 
     derivative of observables with respect to all six cosmological parameters 
     (``Omega_m``, ``Omega_b``, ``h``, ``n_s``, ``sigma_8``, and ``M_nu``) and five 
     HOD parameters 
