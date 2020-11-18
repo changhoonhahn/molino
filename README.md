@@ -21,9 +21,7 @@ you can derive [Fisher matrix forecasts](#fisher-forecasts) on the
 cosmological parameters marginalized over HOD parameters. This python 
 package provides an easy way to access the galaxy mock catalogs.
 For more details on the catalogs see the  
-[website](https://changhoonhahn.github.io/molino/current/) 
-or 
-[Hahn & Villaescusa (2020)]()
+[website](https://changhoonhahn.github.io/molino/current/). 
 
 ## Installation
 ### Downloading the Data
