@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halo Occupation Distribution &#8212; molino 0.1 documentation</title>
+    <title>Downloading the Data &#8212; molino 0.1 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -15,6 +15,8 @@
     <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex/" />
     <link rel="search" title="Search" href="../search/" />
+    <link rel="next" title="Installing the molino package" href="../install/" />
+    <link rel="prev" title="The Molino Suite of Mock Galaxy Catalogs" href="../" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -31,18 +33,25 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="halo-occupation-distribution">
-<h1>Halo Occupation Distribution<a class="headerlink" href="#halo-occupation-distribution" title="Permalink to this headline">¶</a></h1>
-<p>We use the Halo Occupation Distribution (HOD) framework to construct the Molino galaxy mocks. HODs statistically populate galaxies in dark matter halos by specifying the probability of a given halo hosting N galaxies based on its halo mass. We use the standard Zheng <em>et al.</em> (2007) HOD model.</p>
-<p>For the fiducial HOD parameters, we use the following values</p>
+  <div class="section" id="downloading-the-data">
+<h1>Downloading the Data<a class="headerlink" href="#downloading-the-data" title="Permalink to this headline">¶</a></h1>
+<p>The Molino galaxy catalogs can be downloaded using <a class="reference external" href="https://app.globus.org/file-manager?origin_id=dc43f461-0ca7-4203-848c-33a9fc00a464&amp;origin_path=%2Frhzt-ed89%2F">this globus endpoint</a>.  If you
+have access to Princeton’s clusters, the data is also available on
+<cite>/tigress</cite> — <cite>/tigress/chhahn/molino/z=0/</cite>.</p>
+<p>The data consists of multiple <cite>*.tar.gz</cite>  files:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">log</span> <span class="pre">Mmin</span> <span class="pre">=</span> <span class="pre">13.65</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sigma_logM</span> <span class="pre">=</span> <span class="pre">0.2</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">log</span> <span class="pre">M0</span> <span class="pre">=</span> <span class="pre">14.0</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">alpha</span> <span class="pre">=</span> <span class="pre">1.1</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">log</span> <span class="pre">M1</span> <span class="pre">=</span> <span class="pre">14.0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fiducial.tar.gz</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Om_p.tar.gz</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Om_m.tar.gz</span></code></p></li>
 </ul>
-<p>These values are based on the best-fit HOD parameters for the SDSS high luminosity samples (Mr &lt; -21.5 and &lt;-22), modified to accommodate the halo mass limit of the Quijote simulations.</p>
+<blockquote>
+<div><p>…</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">logM1_p.tar.gz</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">logM1_m.tar.gz</span></code></p></li>
+</ul>
+<p>Each <code class="docutils literal notranslate"><span class="pre">*.tar.gz</span></code> file contains the galaxy mock catalogs at a different set of cosmological and HOD parameters. Each mock catalog is an HDF5 file that contains the position, velocity, and some extra data of ~150,000 galaxies.</p>
 </div>
 
 
@@ -67,8 +76,8 @@
 
 
 <h3>Navigation</h3>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../download/">Downloading the Data</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Downloading the Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install/">Installing the <cite>molino</cite> package</a></li>
 </ul>
 
@@ -76,6 +85,8 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../">Documentation overview</a><ul>
+      <li>Previous: <a href="../" title="previous chapter">The Molino Suite of Mock Galaxy Catalogs</a></li>
+      <li>Next: <a href="../install/" title="next chapter">Installing the <cite>molino</cite> package</a></li>
   </ul></li>
 </ul>
 </div>
@@ -109,7 +120,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
-      <a href="../_sources/hod.rst.txt"
+      <a href="../_sources/download.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

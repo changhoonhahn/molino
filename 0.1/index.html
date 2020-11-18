@@ -15,7 +15,7 @@
     <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex/" />
     <link rel="search" title="Search" href="search/" />
-    <link rel="next" title="Installation" href="install/" />
+    <link rel="next" title="Downloading the Data" href="down/" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -40,29 +40,33 @@ redshift-space galaxy sample. The galaxy catalogs are constructed
 from the Quijote N-body simulations (<a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2020ApJS..250....2V/abstract/">Villaescusa-Navarro <em>et al.</em> 2020</a>) using the standard
 <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2007ApJ...667..760Z/abstract/">Zheng <em>et al.</em> (2007)</a> Halo Occupation Distribution (HOD) model. The suite
 contains the galaxy catalogs necessary to conduct a Fisher matrix
-forecast over a full set of cosmological and HOD parameters:i</p>
+forecast over a full set of cosmological and HOD parameters for
+any cosmological observable for a redshift-space galaxy sample:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">15,000</span> <span class="pre">mocks</span></code> at the fiducial cosmological and HOD parameters for covariance
 matrix estimation</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">60,000</span> <span class="pre">mocks</span></code> = (500 N-body realizations) x (5 HOD realizations) x (24 other parameter values)
-to estimate the derivative of the observable with respect to six cosmological parameters
-(<code class="docutils literal notranslate"><span class="pre">Omega_m</span></code>, <code class="docutils literal notranslate"><span class="pre">Omega_b</span></code>, <code class="docutils literal notranslate"><span class="pre">h</span></code>, <code class="docutils literal notranslate"><span class="pre">n_s</span></code>, <code class="docutils literal notranslate"><span class="pre">sigma_8</span></code>, and <code class="docutils literal notranslate"><span class="pre">M_nu</span></code>) and five HOD parameters
+<li><p><code class="docutils literal notranslate"><span class="pre">60,000</span> <span class="pre">mocks</span></code>  24 other parameter values (2,500 mocks each) to estimate the
+derivative of observables with respect to all six cosmological parameters
+(<code class="docutils literal notranslate"><span class="pre">Omega_m</span></code>, <code class="docutils literal notranslate"><span class="pre">Omega_b</span></code>, <code class="docutils literal notranslate"><span class="pre">h</span></code>, <code class="docutils literal notranslate"><span class="pre">n_s</span></code>, <code class="docutils literal notranslate"><span class="pre">sigma_8</span></code>, and <code class="docutils literal notranslate"><span class="pre">M_nu</span></code>) and five
+HOD parameters
 (<code class="docutils literal notranslate"><span class="pre">logMmin</span></code>, <code class="docutils literal notranslate"><span class="pre">sigma_logM</span></code>, <code class="docutils literal notranslate"><span class="pre">logM0</span></code>, <code class="docutils literal notranslate"><span class="pre">alpha</span></code>, and <code class="docutils literal notranslate"><span class="pre">logM1</span></code>).</p></li>
 </ul>
-<p>The fiducial HOD parameters are based on the SDSS high luminosity samples.
-Using the covariance matrix and derivatives calculated from Molino,
-you can derive Fisher matrix forecasts on the cosmological parameters
-marginalized over HOD parameters.</p>
-<p>The <a class="reference external" href="https://github.com/changhoonhahn/molino/"><code class="docutils literal notranslate"><span class="pre">molino</span></code></a> python package provides an easy way to access the galaxy mock
-catalogs and compute cosmological observables.</p>
+<p>The fiducial cosmological parameter values are <code class="docutils literal notranslate"><span class="pre">Omega_m=0.3175</span></code>, <code class="docutils literal notranslate"><span class="pre">Omega_b=0.049</span></code>,
+<code class="docutils literal notranslate"><span class="pre">h=0.6711</span></code>, <code class="docutils literal notranslate"><span class="pre">n_s=0.9624</span></code>, <code class="docutils literal notranslate"><span class="pre">sigma_8=0.834</span></code>, and <code class="docutils literal notranslate"><span class="pre">M_nu</span> <span class="pre">=</span> <span class="pre">0.0</span> <span class="pre">eV</span></code>. The fiducial
+HOD parameters are based on the high luminosity samples of the Sloan Digital Sky Survey
+(<code class="docutils literal notranslate"><span class="pre">M_r</span> <span class="pre">&lt;</span> <span class="pre">-21.5</span></code> and <code class="docutils literal notranslate"><span class="pre">M_r</span> <span class="pre">&lt;</span> <span class="pre">22</span></code> samples):
+<code class="docutils literal notranslate"><span class="pre">log</span> <span class="pre">Mmin=13.65</span></code>, <code class="docutils literal notranslate"><span class="pre">sigma_logM=0.2</span></code>, <code class="docutils literal notranslate"><span class="pre">log</span> <span class="pre">M0=14.0</span></code>, <code class="docutils literal notranslate"><span class="pre">alpha=1.1</span></code>, <code class="docutils literal notranslate"><span class="pre">log</span> <span class="pre">M_0=14.0</span></code>.
+The other 24 non-fiducial parameter values are set by adjusting a single parameter
+either a step above or below the fiducial value. Since <code class="docutils literal notranslate"><span class="pre">M_nu</span></code> cannot be negative,
+the <code class="docutils literal notranslate"><span class="pre">M_\nu</span></code> steps are at 0.1, 0.2, 0.4 eV. At the fiducial parameters, the galaxy
+catalogs have number density <code class="docutils literal notranslate"><span class="pre">n_g</span> <span class="pre">~</span> <span class="pre">1.63x10^-4</span> <span class="pre">h^3</span> <span class="pre">Mpc^-3</span></code>. Each galaxy catalog
+has a volume <code class="docutils literal notranslate"><span class="pre">(1</span> <span class="pre">Gpc/h)^3</span></code>.</p>
+<p>To easily access the galaxy mock catalogs and compute cosmological obseravbles,
+check out the <a class="reference external" href="https://github.com/changhoonhahn/molino/"><code class="docutils literal notranslate"><span class="pre">molino</span></code> python package</a>.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="install/">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="install/#downloading-the-data">Downloading the Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install/#installing-the-molino-package">Installing the <cite>molino</cite> package</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="hod/">Halo Occupation Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="down/">Downloading the Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install/">Installing the <cite>molino</cite> package</a></li>
 </ul>
 </div>
 </div>
@@ -90,15 +94,15 @@ catalogs and compute cosmological observables.</p>
 
 <h3>Navigation</h3>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="install/">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hod/">Halo Occupation Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="down/">Downloading the Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install/">Installing the <cite>molino</cite> package</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="#">Documentation overview</a><ul>
-      <li>Next: <a href="install/" title="next chapter">Installation</a></li>
+      <li>Next: <a href="down/" title="next chapter">Downloading the Data</a></li>
   </ul></li>
 </ul>
 </div>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Installation &#8212; molino 0.1 documentation</title>
+    <title>Installing the molino package &#8212; molino 0.1 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -15,8 +15,7 @@
     <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex/" />
     <link rel="search" title="Search" href="../search/" />
-    <link rel="next" title="Halo Occupation Distribution" href="../hod/" />
-    <link rel="prev" title="The Molino Suite of Mock Galaxy Catalogs" href="../" />
+    <link rel="prev" title="Downloading the Data" href="../download/" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -33,28 +32,8 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="downloading-the-data">
-<h2>Downloading the Data<a class="headerlink" href="#downloading-the-data" title="Permalink to this headline">¶</a></h2>
-<p>The Molino galaxy catalogs will soon (~mid Nov) be publicly available on Princeton’s <cite>dataspace</cite>: <a class="reference external" href="https://dataspace.princeton.edu/">https://dataspace.princeton.edu/</a>. If you have access to Princeton’s clusters, the data is also available on <cite>/tigress</cite>. You can directly download/access the data at <cite>/tigress/chhahn/molino/z=0/</cite>.</p>
-<p>The data consists of multiple <cite>*.tar.gz</cite>  files:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">fiducial.tar.gz</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Om_p.tar.gz</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Om_m.tar.gz</span></code></p></li>
-</ul>
-<blockquote>
-<div><p>…</p>
-</div></blockquote>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">logM1_p.tar.gz</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">logM1_m.tar.gz</span></code></p></li>
-</ul>
-<p>Each <code class="docutils literal notranslate"><span class="pre">*.tar.gz</span></code> file contains the galaxy mock catalogs at a different set of cosmological and HOD parameters. Each mock catalog is an HDF5 file that contains the position, velocity, and extra information of ~150,000 galaxies.</p>
-</div>
-<div class="section" id="installing-the-molino-package">
-<h2>Installing the <cite>molino</cite> package<a class="headerlink" href="#installing-the-molino-package" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="installing-the-molino-package">
+<h1>Installing the <cite>molino</cite> package<a class="headerlink" href="#installing-the-molino-package" title="Permalink to this headline">¶</a></h1>
 <p><strong>setting up the environment</strong></p>
 <p>First, add the following to your <cite>~/.bash_profile</cite>, <cite>~/.bashrc</cite>, or <cite>~/.bashrc.ext</cite> :</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">HDF5_USE_FILE_LOCKING</span><span class="o">=</span>FALSE
@@ -82,7 +61,6 @@ pip install -e .
 <p>Uncompressing the data can take a couple of minutes so plan accordingly.</p>
 <p><strong>*You’re all set!*</strong> Check out some examples to see how you can use <cite>molino</cite>  to easily: <em>e.g.</em> [read in the galaxy mocks](), calculate the [redshift-space galaxy power spectrum](), or calculate the [redshift-space galaxy bispectrum]().</p>
 </div>
-</div>
 
 
           </div>
@@ -107,20 +85,15 @@ pip install -e .
 
 <h3>Navigation</h3>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#downloading-the-data">Downloading the Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#installing-the-molino-package">Installing the <cite>molino</cite> package</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../hod/">Halo Occupation Distribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../download/">Downloading the Data</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installing the <cite>molino</cite> package</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../">Documentation overview</a><ul>
-      <li>Previous: <a href="../" title="previous chapter">The Molino Suite of Mock Galaxy Catalogs</a></li>
-      <li>Next: <a href="../hod/" title="next chapter">Halo Occupation Distribution</a></li>
+      <li>Previous: <a href="../download/" title="previous chapter">Downloading the Data</a></li>
   </ul></li>
 </ul>
 </div>
