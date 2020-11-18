@@ -1,29 +1,5 @@
-Installation
-============
-
-Downloading the Data
---------------------
-
-The Molino galaxy catalogs will soon (~mid Nov) be publicly available on Princeton's `dataspace`: https://dataspace.princeton.edu/. If you have access to Princeton's clusters, the data is also available on `/tigress`. You can directly download/access the data at `/tigress/chhahn/molino/z=0/`. 
-
-The data consists of multiple `*.tar.gz`  files: 
-
-*   ``fiducial.tar.gz``
-
-*   ``Om_p.tar.gz``
-
-*   ``Om_m.tar.gz``
-
-  … 
-
-*   ``logM1_p.tar.gz``
-
-*   ``logM1_m.tar.gz``
-
-Each ``*.tar.gz`` file contains the galaxy mock catalogs at a different set of cosmological and HOD parameters. Each mock catalog is an HDF5 file that contains the position, velocity, and extra information of ~150,000 galaxies. 
-
 Installing the `molino` package 
--------------------------------
+===============================
 
 **setting up the environment**
 
