@@ -86,7 +86,7 @@ Uncompressing the data can take a couple of minutes so plan accordingly.
 
 ## Halo Occupation Distribution
 
-We use the Halo Occupation Distribution (HOD) framework to construct the Molino galaxy mocks. HODs statistically populate galaxies in dark matter halos by specifying the probability of a given halo hosting N galaxies  based on its halo mass --- P(N|M_h)​. We use the standard Zheng _et al._ (2007) HOD model. 
+We use the Halo Occupation Distribution (HOD) framework to construct the Molino galaxy mocks. HODs statistically populate galaxies in dark matter halos by specifying the probability of a given halo hosting N galaxies  based on its halo mass --- P(N|M_h). We use the standard Zheng _et al._ (2007) HOD model. 
 
 For the fiducial HOD parameters, we use the following values
 
@@ -99,8 +99,14 @@ For the fiducial HOD parameters, we use the following values
 These values are based on the best-fit HOD parameters for the SDSS high luminosity samples (Mr < -21.5 and <-22), modified to accommodate the halo mass limit of the Quijote simulations.
 
 ## Fisher Forecasts
+The Molino suite provides all the ingredients to conduct a Fisher forecast of
+any cosmological observable. The Fisher matrix can be calculated for some
+observable `B` using 
+![fisher](docs/fisher.png)
 
-
+`C` is the covariance matrix, which can be derived from the 15,000 fiducial
+galaxy catalogs. The derivatives of `B` can be calculated using the rest of the
+catalogs with finite difference. 
 
 ## Team 
 - ChangHoon Hahn (Princeton) 
