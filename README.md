@@ -2,7 +2,10 @@
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/changhoonhahn/molino/blob/main/LICENSE)
 [![DOI ark](http://img.shields.io/badge/DOI-10.34770/rhzt-blue.svg?style=flat)](http://arks.princeton.edu/ark:/88435/dsp012v23vx458)
 
-Molino contains 75,000 galaxy mock catalogs designed to quantify
+`molino` is a python package for easily utilizing the mock galaxy catalogs in
+the Molino Suite. 
+
+Molino suite contains 75,000 galaxy mock catalogs designed to quantify
 the information content of any cosmological observable for a 
 redshift-space galaxy sample. The galaxy catalogs are constructed 
 from the Quijote N-body simulations 
