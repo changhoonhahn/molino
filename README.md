@@ -108,7 +108,8 @@ These values are based on the best-fit HOD parameters for the SDSS high luminosi
 The Molino suite provides all the ingredients to conduct a Fisher forecast of
 any cosmological observable. The Fisher matrix can be calculated for some
 observable `B` using 
-![fisher](docs/fisher.png)
+
+<img src="docs/fisher.png" alt="fisher" width="300" />
 
 `C` is the covariance matrix, which can be derived from the 15,000 fiducial
 galaxy catalogs. The derivatives of `B` can be calculated using the rest of the
