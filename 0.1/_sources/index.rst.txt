@@ -37,7 +37,8 @@ The other 24 non-fiducial parameter values are set by adjusting a single paramet
 either a step above or below the fiducial value. Since ``M_nu`` cannot be negative, 
 the ``M_\nu`` steps are at 0.1, 0.2, 0.4 eV. At the fiducial parameters, the galaxy 
 catalogs have number density ``n_g ~ 1.63x10^-4 h^3 Mpc^-3``. Each galaxy catalog 
-has a volume ``(1 Gpc/h)^3``.
+has a volume ``(1 Gpc/h)^3`` and contains ~150,000 galaxies. Altogether, the
+Molino suite contains over 10 billion galaxies.  
 
 To easily access the galaxy mock catalogs and compute cosmological obseravbles,
 check out the |molino|_.
