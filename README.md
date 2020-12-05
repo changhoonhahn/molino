@@ -24,7 +24,8 @@ any cosmological observable for a redshift-space galaxy sample:
 
 Using the covariance matrix and derivatives calculated from Molino, 
 you can derive [Fisher matrix forecasts](#fisher-forecasts) on the
-cosmological parameters marginalized over HOD parameters. This python 
+cosmological parameters marginalized over HOD parameters. Altogether, the
+Molino catalogs have over 10 billion galaxies. This python 
 package provides an easy way to access the galaxy mock catalogs.
 For more details on the catalogs see the  
 [website](https://changhoonhahn.github.io/molino/current/). 
