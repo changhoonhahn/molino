@@ -1,6 +1,8 @@
 # The Molino Suite of Mock Galaxy Catalogs
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/changhoonhahn/molino/blob/main/LICENSE)
 [![DOI ark](http://img.shields.io/badge/DOI-10.34770/rhzt-blue.svg?style=flat)](http://arks.princeton.edu/ark:/88435/dsp012v23vx458)
+[![DOI ark](http://img.shields.io/badge/arXiv-2012.02200-orange.svg?style=flat)](https://arxiv.org/abs/2012.02200)
+
 
 `molino` is a python package for easily utilizing the mock galaxy catalogs in
 the Molino Suite. 
@@ -27,8 +29,7 @@ you can derive [Fisher matrix forecasts](#fisher-forecasts) on the
 cosmological parameters marginalized over HOD parameters. Altogether, the
 Molino catalogs have over 10 billion galaxies. This python 
 package provides an easy way to access the galaxy mock catalogs.
-For more details on the catalogs see the  
-[website](https://changhoonhahn.github.io/molino/current/). 
+For more details and to download the catalogs check out the Molino suite [website](https://changhoonhahn.github.io/molino/current/). 
 
 ## Installation
 ### Downloading the Data
@@ -115,6 +116,9 @@ observable `B` using
 `C` is the covariance matrix, which can be derived from the 15,000 fiducial
 galaxy catalogs. The derivatives of `B` can be calculated using the rest of the
 catalogs with finite difference. 
+
+## Attribution 
+Please cite [Hahn & Villaescusa-Navarro (2020)](https://arxiv.org/abs/2012.02200) if you use the simulations in your research.
 
 ## Team 
 - ChangHoon Hahn (Princeton) 
