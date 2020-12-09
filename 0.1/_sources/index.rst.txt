@@ -48,6 +48,14 @@ check out the |molino|_.
 .. |molino| replace:: ``molino`` python package
 
 
+Attribution
+-----------
+
+Please cite `Hahn & Villaescusa-Navarro (2020)
+<https://arxiv.org/abs/2012.02200>`_ if you use the simulations in your
+research.
+
+
 .. toctree::
    :maxdepth: 2
 
